@@ -4,7 +4,7 @@
 fit_predict_analytic <- stan(file="gp-predict-analytic.stan",   
                              data=list(N1=N1,x1=x1,y1=y1,N2=N2,x2=x2),
                              iter=200, chains=3);
-fit_predict_analytic_ss <- extract(fit_predict, permuted=TRUE);
+fit_predict_analytic_ss <- extract(fit_predict_analytic, permuted=TRUE);
 print(fit_predict_analytic);
 
 # plot fits vs. simulated value from which fits drawn
